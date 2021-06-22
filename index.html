@@ -150,6 +150,204 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Dubbo一天学习总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/22/Dubbo%E4%B8%80%E5%A4%A9%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">Dubbo一天学习总结</a>
+    </h1>
+  
+
+        
+        <a href="/2021/06/22/Dubbo%E4%B8%80%E5%A4%A9%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2021-06-22T14:05:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-22</time>
+</a>
+		
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="🏳️‍🌈-衡量网站的性能指标">🏳️‍🌈 衡量网站的性能指标</h2>
+<ul>
+<li>
+<p>==高并发、高可用、高性能==</p>
+</li>
+<li>
+<p><strong>响应时间</strong>：指执行一个请求从开始到最后收到响应数据所花费的总体时间。</p>
+</li>
+<li>
+<p><strong>并发数</strong>：指系统同时能处理的请求数量。</p>
+<ul>
+<li><strong>并发连接数</strong>：指的是客户端向服务器发起请求，并建立了TCP连接。<strong>每秒钟服务器连接的总TCP数量</strong></li>
+<li><strong>请求数</strong>：也称为QPS(Query Per Second) 指每秒多少请求</li>
+<li><strong>并发用户数</strong>：单位时间内有多少用户</li>
+</ul>
+</li>
+<li>
+<p><strong>吞吐量</strong>：指单位时间内系统能处理的请求数量。</p>
+<ul>
+<li><strong>QPS</strong>：Query Per Second 每秒查询数。</li>
+<li><strong>TPS</strong>：Transactions Per Second 每秒事务数。</li>
+</ul>
+</li>
+</ul>
+<p>注：一个事务是指一个客户机向服务器发送请求然后服务器做出反应的过程，一个页面的一次访问，只会形成<strong>一个TPS</strong> ；但一次页面请求，可能产生多次对服务器的请求，就会有<strong>多个QPS</strong></p>
+<h2 id="✈️集群和分布式">✈️<strong>集群和分布式</strong></h2>
+<ul>
+<li>
+<p><strong>集群</strong>：很多“人”一起 ，干一样的事。</p>
+<ul>
+<li>一个业务模块，部署在多台服务器上。</li>
+</ul>
+</li>
+<li>
+<p><strong>分布式</strong>：很多“人”一起，干不一样的事。这些不一样的事，但合起来却是一件大事。</p>
+<ul>
+<li>一个大的业务系统，拆分为小的业务模块，分别部署在不同的机器上</li>
+</ul>
+</li>
+<li>
+<p><strong>演进过程</strong> : 单体架构-&gt;垂直架构-&gt;分布式架构-&gt;SOA架构-&gt;微服务架构</p>
+<ul>
+<li>Dubbo属于SOA架构，SpringCloud属于微服务架构</li>
+</ul>
+</li>
+</ul>
+<h2 id="🍡Dubbo学习">🍡Dubbo学习</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://dubbo.apache.org/zh/docs/v2.7/">官网文档</a>有Dubbo2.7和3.0两个版本的文档，目前学习的是2.7</li>
+</ul>
+<p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.west.cn%2Finfo%2Fupload%2F20180618%2Ffwxafvbvcrn.png&amp;refer=http%3A%2F%2Fwww.west.cn&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1626964313&amp;t=f0e162c18b7bf5622126ba722377ed43" alt="img"></p>
+<ol>
+<li>
+<p>zookeeper作为注册中心，默认端口2181</p>
+</li>
+<li>
+<p>dubbo-admin可以作为监控管理平台，分为vue的前端，SpringBoot的后端，相当于前后端分离</p>
+</li>
+<li>
+<p><strong>@Service</strong>注解为将这个类提供的方法（也就是服务）对外发布，将访问的地址、ip、端口、路径注册到注册中心中。</p>
+</li>
+<li>
+<p><strong>@Reference</strong>注解背后的三个步骤：1.从zookeeper注册中心中获取userService的访问url  2.进行远程调用RPC  3.将结果封装成一个代理对象，给变量赋值。</p>
+</li>
+</ol>
+<h2 id="🐬总结两种搭建方式的步骤">🐬总结两种搭建方式的步骤</h2>
+<p><img src="https://i.loli.net/2021/06/22/3oa4dAXfnVKEUSu.png" alt="image-20210622223926553"></p>
+<h2 id="🐘高级特性">🐘高级特性</h2>
+<ul>
+<li>
+<p><strong>序列化</strong></p>
+<ul>
+<li>dubbo 内部已经将序列化和反序列化的过程内部封装了</li>
+<li>只需要在定义pojo类时实现Serializable接口即可</li>
+</ul>
+</li>
+<li>
+<p><strong>地址缓存</strong></p>
+<p>问：注册中心挂了，服务仍可以正常进行吗？</p>
+<ul>
+<li>可以，因为dubbo服务消费者在第一次调用时，会将<strong>服务提供方地址</strong>缓存到本地，以后在调用则不会访问注册中心。当服务提供者地址发生变化时，注册中心会通知服务消费者。</li>
+</ul>
+</li>
+<li>
+<p><strong>超时与重试</strong></p>
+</li>
+<li>
+<p><strong>多版本</strong></p>
+</li>
+<li>
+<p><strong>负载均衡</strong></p>
+<p>负载均衡策略（4种）：</p>
+<ul>
+<li>
+<p>Random ：按权重随机，默认值。按权重设置随机概率。比如1,2,3的权重分别为100,200,100，则访问服务器1,2,3的概率可以看做1/4,2/4,1/4.</p>
+<p>在定义UserServiceImpl实现类时，前面的**@Service(weight = 100)**即为权重，</p>
+</li>
+<li>
+<p>RoundRobin ：按权重轮询。比如服务提供者1,2,3的权重分别为100,200,100，在一轮过后，第四个请求来临时，会优先选择权重大的服务提供者2</p>
+</li>
+<li>
+<p>LeastActive：最少活跃调用数，相同活跃数的随机。向服务器发送请求时，消费者先问一下他们最后一次处理请求花了多少时间，最后选择时间少的机器。</p>
+</li>
+<li>
+<p>ConsistentHash：一致性 Hash，相同参数的请求总是发到同一提供者。若参数相同则直接匹配（看id)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>集群容错</strong></p>
+<p>集群容错模式：</p>
+<ul>
+<li>Failover Cluster：失败重试。默认值。当出现失败，重试其它服务器 ，默认重试2次，使用 retries 配置。一般用于读操</li>
+<li>Failfast Cluster ：快速失败，只发起一次调用，失败立即报错。通常用于写操作。</li>
+<li>Failsafe Cluster ：失败安全，出现异常时，直接忽略。返回一个空结果。</li>
+<li>Failback Cluster ：失败自动恢复，后台记录失败请求，定时重发。通常用于消息通知操作。</li>
+<li>Forking Cluster ：并行调用多个服务器，只要一个成功即返回。</li>
+<li>Broadcast  Cluster ：广播调用所有提供者，逐个调用，任意一台报错则报错。</li>
+</ul>
+</li>
+<li>
+<p><strong>服务降级</strong></p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Dubbo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/06/22/Dubbo%E4%B8%80%E5%A4%A9%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-04-Ubuntu18安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -566,6 +764,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Dubbo</a>
               </li>
              
               <li class="article-tag-list-item">
