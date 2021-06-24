@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/06/23/45EQKpBhrjgbo8n.png">
 <meta property="og:image" content="https://i.loli.net/2021/06/23/cgovizyftXFZdWq.png">
 <meta property="article:published_time" content="2021-06-22T14:05:11.000Z">
-<meta property="article:modified_time" content="2021-06-23T14:51:13.596Z">
+<meta property="article:modified_time" content="2021-06-24T10:02:29.059Z">
 <meta property="article:author" content="Chen Leo">
 <meta property="article:tag" content="Dubbo">
 <meta name="twitter:card" content="summary">
@@ -266,8 +266,8 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;com.chen.controller&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/06/23/x4BcS3DmyezoHtL.png" alt="image-20210623184037702"></p>
 <p>知识点：1.@Service，需要将UserService类放到容器里面当做一个bean，所以需要@Service</p>
-<p>​		   2.@RestController: Spring 4新增注解,同样可以注解Controller类,相当于@Controller + @ResponseBody,主要是为了使http请求返回json或者xml格式数据,一般情况下都是使用这个注解。</p>
-<p>​		   3.@RequestMapping：配置URI映射，要配置Web请求的映射,就需要用上@RequestMapping注解。@RequestMapping注解可以在控制器类的级别和/或其中的方法的级别上使用。在类级别上的注解会将一个特定请求或者请求模式映射到一个控制器之上,之后还可以添加方法级别的注解来进一步绑定与具体处理方法的映射关系。类上的&quot;请求地址”是方法上的“请求地址”的父地址。</p>
+<p>​		       2.@RestController: Spring 4新增注解,同样可以注解Controller类,相当于@Controller + @ResponseBody,主要是为了使http请求返回json或者xml格式数据,直接让方法返回java对象，然后框架自动的转成json，通过输出流的方式往回写。一般情况下都是使用这个注解。</p>
+<p>​		      3.@RequestMapping：匹配请求路径。配置URI映射，要配置Web请求的映射,就需要用上@RequestMapping注解。@RequestMapping注解可以在控制器类的级别和/或其中的方法的级别上使用。在类级别上的注解会将一个特定请求或者请求模式映射到一个控制器之上,之后还可以添加方法级别的注解来进一步绑定与具体处理方法的映射关系。类上的&quot;请求地址”是方法上的“请求地址”的父地址。</p>
 <h2 id="👼-dubbo实现">👼 dubbo实现</h2>
 <p><img src="https://i.loli.net/2021/06/23/45EQKpBhrjgbo8n.png" alt="image-20210623220144376"></p>
 <p>UserService类的**@Service**（apache下）注解为将这个类提供的方法（也就是服务）对外发布，将访问的地址、ip、端口、路径注册到注册中心中。然后配置注册中心。目前不知道这是个啥问题。</p>
