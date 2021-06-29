@@ -61,8 +61,6 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -113,8 +111,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -135,9 +131,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -153,6 +147,101 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-09-Redis学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/29/09-Redis%E5%AD%A6%E4%B9%A0/">Redis学习总结</a>
+    </h1>
+  
+
+        
+        <a href="/2021/06/29/09-Redis%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2021-06-29T00:46:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-29</time>
+</a>
+		
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Jedis简易工具类开发">Jedis简易工具类开发</h3>
+<p>Jedis对象一般不能手动管理，通常由连接池提供连接</p>
+<p><strong>基于连接池获取连接</strong></p>
+<ul>
+<li>
+<p>JedisPool：Jedis提供的连接池技术</p>
+<ul>
+<li>
+<p>poolConfig:连接池配置对象</p>
+</li>
+<li>
+<p>host:redis服务地址</p>
+</li>
+<li>
+<p>port:redis服务端口号</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>JedisPool构造方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">JedisPool</span><span class="params">(GenericObjectPoolConfig poolConfig, String host, <span class="keyword">int</span> port)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; <span class="keyword">this</span>(poolConfig, host, port, <span class="number">2000</span>, (String)<span class="keyword">null</span>, <span class="number">0</span>, (String)<span class="keyword">null</span>); &#125;</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/06/29/09-Redis%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-08-新增检查项后台管理系统编写思路" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -952,6 +1041,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
             
             <div class="clearfix"></div>

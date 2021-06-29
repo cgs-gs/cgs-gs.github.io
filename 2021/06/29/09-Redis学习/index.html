@@ -6,27 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>health_backend后台项目结构 | 纫秋茗以为佩</title>
+  <title>Redis学习总结 | 纫秋茗以为佩</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用的是ElementUI网站快速成型工具 后台项目结构：">
+  <meta name="description" content="Jedis简易工具类开发 Jedis对象一般不能手动管理，通常由连接池提供连接 基于连接池获取连接   JedisPool：Jedis提供的连接池技术   poolConfig:连接池配置对象   host:redis服务地址   port:redis服务端口号     JedisPool构造方法： 12public JedisPool(GenericObjectPoolConfig poolCo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="health_backend后台项目结构">
-<meta property="og:url" content="http://example.com/2021/06/23/06-health-backend%E5%90%8E%E5%8F%B0%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:title" content="Redis学习总结">
+<meta property="og:url" content="http://example.com/2021/06/29/09-Redis%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="纫秋茗以为佩">
-<meta property="og:description" content="使用的是ElementUI网站快速成型工具 后台项目结构：">
+<meta property="og:description" content="Jedis简易工具类开发 Jedis对象一般不能手动管理，通常由连接池提供连接 基于连接池获取连接   JedisPool：Jedis提供的连接池技术   poolConfig:连接池配置对象   host:redis服务地址   port:redis服务端口号     JedisPool构造方法： 12public JedisPool(GenericObjectPoolConfig poolCo">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.loli.net/2021/06/23/EXNwz6hFYuOk5sU.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/23/qTdJM5FlVw3hp9S.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/23/UTxSapkwnYZmchI.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/23/KMqgtf2hy7ubHlW.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/23/rn5RZDL2ktVPhBx.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/23/myNvWP26xVEBJHR.png">
-<meta property="article:published_time" content="2021-06-23T14:45:36.000Z">
-<meta property="article:modified_time" content="2021-06-23T14:50:50.757Z">
+<meta property="og:image" content="https://i.loli.net/2021/06/29/98BqlV7QUZomWLf.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/28/PhHd5poGEs67Wre.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/28/X6hHpAQvPqSRY5K.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/28/QptGJlUCagh3Zn6.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/28/mDlVC36PFioUeXO.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/28/BWxhpZyCqJHk7Fm.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/28/tSERDBfliZOmWdT.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/28/GlUpBAaqgbZsLV3.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/28/OjoXLnbS3rwJmy9.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/28/kci64jF3HKhBlGN.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/29/hbrHJdKIg9sNTtU.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/29/RTYW6rVEngMyqdj.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/29/9fuRoaTzwKIbU6V.png">
+<meta property="article:published_time" content="2021-06-29T00:46:12.000Z">
+<meta property="article:modified_time" content="2021-06-29T05:42:22.733Z">
 <meta property="article:author" content="Chen Leo">
-<meta property="article:tag" content="guang_health">
+<meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/06/23/EXNwz6hFYuOk5sU.png">
+<meta name="twitter:image" content="https://i.loli.net/2021/06/29/98BqlV7QUZomWLf.png">
   
     <link rel="alternative" href="/atom.xml" title="纫秋茗以为佩" type="application/atom+xml">
   
@@ -156,20 +163,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-06-health-backend后台项目结构" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-09-Redis学习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      health_backend后台项目结构
+      Redis学习总结
     </h1>
   
 
         
-        <a href="/2021/06/23/06-health-backend%E5%90%8E%E5%8F%B0%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/" class="archive-article-date">
-  	<time datetime="2021-06-23T14:45:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-23</time>
+        <a href="/2021/06/29/09-Redis%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2021-06-29T00:46:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-29</time>
 </a>
 		
         
@@ -177,36 +184,163 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用的是ElementUI网站快速成型工具</p>
-<p>后台项目结构：</p>
-<p><img src="https://i.loli.net/2021/06/23/EXNwz6hFYuOk5sU.png" alt="image-20210623114008322"></p>
+        <h3 id="Jedis简易工具类开发">Jedis简易工具类开发</h3>
+<p>Jedis对象一般不能手动管理，通常由连接池提供连接</p>
+<p><strong>基于连接池获取连接</strong></p>
+<ul>
+<li>
+<p>JedisPool：Jedis提供的连接池技术</p>
+<ul>
+<li>
+<p>poolConfig:连接池配置对象</p>
+</li>
+<li>
+<p>host:redis服务地址</p>
+</li>
+<li>
+<p>port:redis服务端口号</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>JedisPool构造方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">JedisPool</span><span class="params">(GenericObjectPoolConfig poolConfig, String host, <span class="keyword">int</span> port)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; <span class="keyword">this</span>(poolConfig, host, port, <span class="number">2000</span>, (String)<span class="keyword">null</span>, <span class="number">0</span>, (String)<span class="keyword">null</span>); &#125;</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
+<ol>
+<li>封装连接参数（配置文件）jedis.properties 加载配置信息:静态代码块初始化资源,创建连接池放在静态代码块中</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span>&#123; <span class="comment">//读取配置文件 获得参数值 </span></span><br><span class="line">    ResourceBundle rb = ResourceBundle.getBundle(<span class="string">&quot;jedis&quot;</span>); </span><br><span class="line">    host = rb.getString(<span class="string">&quot;jedis.host&quot;</span>); </span><br><span class="line">    port = Integer.parseInt(rb.getString(<span class="string">&quot;jedis.port&quot;</span>)); </span><br><span class="line">    maxTotal = Integer.parseInt(rb.getString(<span class="string">&quot;jedis.maxTotal&quot;</span>)); </span><br><span class="line">    maxIdle = Integer.parseInt(rb.getString(<span class="string">&quot;jedis.maxIdle&quot;</span>)); </span><br><span class="line">    poolConfig = <span class="keyword">new</span> JedisPoolConfig(); </span><br><span class="line">    poolConfig.setMaxTotal(maxTotal); </span><br><span class="line">    poolConfig.setMaxIdle(maxIdle); </span><br><span class="line">    jedisPool = <span class="keyword">new</span> JedisPool(poolConfig,host,port); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>获取连接:对外访问接口，提供jedis连接对象，连接从连接池获取</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Jedis <span class="title">getJedis</span><span class="params">()</span></span>&#123; </span><br><span class="line">    Jedis jedis = jedisPool.getResource(); </span><br><span class="line">    <span class="keyword">return</span> jedis; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Redis持久化过程">Redis持久化过程</h3>
+<p>分为RDB和AOF</p>
+<p><strong>RDB</strong>:将当前数据状态进行保存，快照形式，存储数据结果，存储格式简单，关注点在数据</p>
+<p><img src="https://i.loli.net/2021/06/29/98BqlV7QUZomWLf.png" alt="image-20210629085204210"></p>
+<ol>
+<li>RDB启动方式 —— save指令:save指令的执行会阻塞当前Redis服务器，直到当前RDB过程完成为止，有可能会造成长时间阻塞，线上环境不建议使用。</li>
+</ol>
+<p><img src="https://i.loli.net/2021/06/28/PhHd5poGEs67Wre.png" alt="image-20210628142344340"></p>
+<ol start="2">
+<li>RDB启动方式 —— bgsave指令（bg是后台的意思）:bgsave命令是针对save阻塞问题做的优化。Redis内部所有涉及到RDB操作都采用bgsave的方式，save命令可以放弃使用。</li>
+</ol>
+<p><img src="https://i.loli.net/2021/06/28/X6hHpAQvPqSRY5K.png" alt="image-20210628142321393"></p>
+<ol start="3">
+<li>RDB启动方式 ——save配置:save second changes</li>
+</ol>
+<p>save配置要根据实际业务情况进行设置，频度过高或过低都会出现性能问题，结果可能是灾难性的</p>
+<p>save配置中对于second与changes设置通常具有互补对应关系，尽量不要设置成包含性关系</p>
+<p>save配置启动后执行的是bgsave操作</p>
+<p><img src="https://i.loli.net/2021/06/28/QptGJlUCagh3Zn6.png" alt="image-20210628142359598"></p>
+<p>对比：<img src="https://i.loli.net/2021/06/28/mDlVC36PFioUeXO.png" alt="image-20210628142719779"></p>
+<p>总结：</p>
+<p><strong>RDB优点</strong>：</p>
 <ul>
-<li>分析main.html</li>
+<li>RDB是一个紧凑压缩的二进制文件，存储效率较高</li>
+<li>RDB内部存储的是redis在某个时间点的数据快照，非常适合用于数据备份，全量复制等场景</li>
+<li>RDB恢复数据的速度要比AOF快很多</li>
+<li>应用：服务器中每X小时执行bgsave备份，并将RDB文件拷贝到远程机器中，用于灾难恢复。</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 页面meta --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>健康体检管理<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;健康体检管理&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;健康体检管理&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no&quot;</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入样式 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../plugins/elementui/index.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../plugins/font-awesome/css/font-awesome.min.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../css/style.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.el-main</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">        <span class="attribute">top</span>: <span class="number">70px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">bottom</span>: <span class="number">0px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">left</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">right</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">&quot;hold-transition skin-purple sidebar-mini&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-container</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-header</span>  <span class="attr">class</span>=<span class="string">&quot;main-header&quot;</span> <span class="attr">style</span>=<span class="string">&quot;height:70px;&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">&quot;navbar navbar-static-top&quot;</span> <span class="attr">:class</span>=<span class="string">&#x27;&#x27;</span>&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!-- Logo --&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">class</span>=<span class="string">&quot;logo&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align:center&quot;</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;logo-lg&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;../img/logo.png&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;right-menu&quot;</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;help&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-exclamation-circle&quot;</span> <span class="attr">aria-hidden</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>帮助<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">el-dropdown</span> <span class="attr">class</span>=<span class="string">&quot;avatar-container right-menu-item&quot;</span> <span class="attr">trigger</span>=<span class="string">&quot;click&quot;</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;avatar-wrapper&quot;</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;../img/user2-160x160.jpg&quot;</span> <span class="attr">class</span>=<span class="string">&quot;user-avatar&quot;</span>&gt;</span></span><br><span class="line">                                Jay.Liu</span><br><span class="line">                            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">el-dropdown-menu</span> <span class="attr">slot</span>=<span class="string">&quot;dropdown&quot;</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">el-dropdown-item</span> <span class="attr">divided</span>&gt;</span></span><br><span class="line">                                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;display:block;&quot;</span>&gt;</span>修改密码<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;/<span class="name">el-dropdown-item</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">el-dropdown-item</span> <span class="attr">divided</span>&gt;</span></span><br><span class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;display:block;&quot;</span>&gt;</span>退出<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                                    <span class="tag">&lt;/<span class="name">el-dropdown-item</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;/<span class="name">el-dropdown-menu</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">el-dropdown</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-header</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-container</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-aside</span> <span class="attr">width</span>=<span class="string">&quot;200px&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">el-menu</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">el-submenu</span> <span class="attr">v-for</span>=<span class="string">&quot;menu in menuList&quot;</span> <span class="attr">:index</span>=<span class="string">&quot;menu.path&quot;</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot</span>=<span class="string">&quot;title&quot;</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa&quot;</span> <span class="attr">:class</span>=<span class="string">&quot;menu.icon&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                                &#123;&#123;menu.title&#125;&#125;</span><br><span class="line">                            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">&quot;child in menu.children&quot;</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">el-menu-item</span> <span class="attr">:index</span>=<span class="string">&quot;child.path&quot;</span>&gt;</span></span><br><span class="line">                                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">:href</span>=<span class="string">&quot;child.linkUrl&quot;</span> <span class="attr">target</span>=<span class="string">&quot;right&quot;</span>&gt;</span>&#123;&#123;child.title&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">el-submenu</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">el-menu</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">el-aside</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-container</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">name</span>=<span class="string">&quot;right&quot;</span> <span class="attr">class</span>=<span class="string">&quot;el-main&quot;</span> <span class="attr">src</span>=<span class="string">&quot;ordersetting.html&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;580px&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">el-container</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-container</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-container</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引入组件库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../js/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../plugins/elementui/index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;../js/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line"><span class="javascript">        <span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="javascript">            <span class="attr">menuList</span>:[</span></span><br><span class="line"><span class="javascript">                &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;path&quot;</span>: <span class="string">&quot;1&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;title&quot;</span>: <span class="string">&quot;工作台&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;icon&quot;</span>:<span class="string">&quot;fa-dashboard&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;children&quot;</span>: []</span></span><br><span class="line"><span class="javascript">                &#125;,</span></span><br><span class="line"><span class="javascript">                &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;path&quot;</span>: <span class="string">&quot;2&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;title&quot;</span>: <span class="string">&quot;会员管理&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;icon&quot;</span>:<span class="string">&quot;fa-user-md&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;children&quot;</span>: [</span></span><br><span class="line"><span class="javascript">                        &#123;</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;path&quot;</span>: <span class="string">&quot;/2-1&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;会员档案&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;linkUrl&quot;</span>:<span class="string">&quot;member.html&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;children&quot;</span>:[]</span></span><br><span class="line"><span class="javascript">                        &#125;,</span></span><br><span class="line"><span class="javascript">                        &#123;</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;path&quot;</span>: <span class="string">&quot;/2-2&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;体检上传&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;children&quot;</span>:[]</span></span><br><span class="line"><span class="javascript">                        &#125;,</span></span><br><span class="line"><span class="javascript">                        &#123;</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;path&quot;</span>: <span class="string">&quot;/2-3&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;会员统计&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;linkUrl&quot;</span>:<span class="string">&quot;all-item-list.html&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;children&quot;</span>:[]</span></span><br><span class="line"><span class="javascript">                        &#125;,</span></span><br><span class="line"><span class="javascript">                    ]</span></span><br><span class="line"><span class="javascript">                &#125;,</span></span><br><span class="line"><span class="javascript">                &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;path&quot;</span>: <span class="string">&quot;3&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;title&quot;</span>: <span class="string">&quot;预约管理&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;icon&quot;</span>:<span class="string">&quot;fa-tty&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;children&quot;</span>: [</span></span><br><span class="line"><span class="javascript">                        &#123;</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;path&quot;</span>: <span class="string">&quot;/3-1&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;预约列表&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;linkUrl&quot;</span>:<span class="string">&quot;ordersettinglist.html&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;children&quot;</span>:[]</span></span><br><span class="line"><span class="javascript">                        &#125;,</span></span><br><span class="line"><span class="javascript">                        &#123;</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;path&quot;</span>: <span class="string">&quot;/3-2&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;预约设置&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;linkUrl&quot;</span>:<span class="string">&quot;ordersetting.html&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;children&quot;</span>:[]</span></span><br><span class="line"><span class="javascript">                        &#125;,</span></span><br><span class="line"><span class="javascript">                        &#123;</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;path&quot;</span>: <span class="string">&quot;/3-3&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;套餐管理&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;linkUrl&quot;</span>:<span class="string">&quot;setmeal.html&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;children&quot;</span>:[]</span></span><br><span class="line"><span class="javascript">                        &#125;,</span></span><br><span class="line"><span class="javascript">                        &#123;</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;path&quot;</span>: <span class="string">&quot;/3-4&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;检查组管理&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;linkUrl&quot;</span>:<span class="string">&quot;checkgroup.html&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;children&quot;</span>:[]</span></span><br><span class="line"><span class="javascript">                        &#125;,</span></span><br><span class="line"><span class="javascript">                        &#123;</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;path&quot;</span>: <span class="string">&quot;/3-5&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;检查项管理&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;linkUrl&quot;</span>:<span class="string">&quot;checkitem.html&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;children&quot;</span>:[]</span></span><br><span class="line"><span class="javascript">                        &#125;,</span></span><br><span class="line"><span class="javascript">                    ]</span></span><br><span class="line"><span class="javascript">                &#125;,</span></span><br><span class="line"><span class="javascript">                &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;path&quot;</span>: <span class="string">&quot;4&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;title&quot;</span>: <span class="string">&quot;健康评估&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;icon&quot;</span>:<span class="string">&quot;fa-stethoscope&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;children&quot;</span>:[</span></span><br><span class="line"><span class="javascript">                        &#123;</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;path&quot;</span>: <span class="string">&quot;/4-1&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;中医体质辨识&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;linkUrl&quot;</span>:<span class="string">&quot;all-medical-list.html&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;children&quot;</span>:[]</span></span><br><span class="line"><span class="javascript">                        &#125;,</span></span><br><span class="line"><span class="javascript">                    ]</span></span><br><span class="line"><span class="javascript">                &#125;,</span></span><br><span class="line"><span class="javascript">                &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;path&quot;</span>: <span class="string">&quot;5&quot;</span>,     <span class="comment">//菜单项所对应的路由路径</span></span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;title&quot;</span>: <span class="string">&quot;统计分析&quot;</span>,     <span class="comment">//菜单项名称</span></span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;icon&quot;</span>:<span class="string">&quot;fa-heartbeat&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;children&quot;</span>:[<span class="comment">//是否有子菜单，若没有，则为[]</span></span></span><br><span class="line"><span class="javascript">                        &#123;</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;path&quot;</span>: <span class="string">&quot;/5-1&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;工作量统计&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;linkUrl&quot;</span>:<span class="string">&quot;all-medical-list.html&quot;</span>,</span></span><br><span class="line"><span class="javascript">                            <span class="string">&quot;children&quot;</span>:[]</span></span><br><span class="line"><span class="javascript">                        &#125;</span></span><br><span class="line"><span class="javascript">                    ]</span></span><br><span class="line"><span class="javascript">                &#125;</span></span><br><span class="line"><span class="javascript">            ]</span></span><br><span class="line"><span class="javascript">        &#125;</span></span><br><span class="line"><span class="javascript">    &#125;);</span></span><br><span class="line"><span class="javascript">    $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> wd = <span class="number">200</span>;</span></span><br><span class="line"><span class="javascript">            $(<span class="string">&quot;.el-main&quot;</span>).css(<span class="string">&#x27;width&#x27;</span>, $(<span class="string">&#x27;body&#x27;</span>).width() - wd + <span class="string">&#x27;px&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    &#125;);</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><el-container>中分为头<el-header>和下面一整部分<el-container></p>
-<p><img src="https://i.loli.net/2021/06/23/qTdJM5FlVw3hp9S.png" alt="image-20210623155934510"></p>
-<p>下面一整部分<el-container>可分为左侧栏展示菜单的那块<el-aside>和右侧的<el-container></p>
-<p><img src="https://i.loli.net/2021/06/23/UTxSapkwnYZmchI.png" alt="image-20210623160242754"></p>
-<p>右侧的<el-container>是通过iframe属性和src来展示独立的页面，这里要设置为checkitem.html</p>
-<p><img src="https://i.loli.net/2021/06/23/KMqgtf2hy7ubHlW.png" alt="image-20210623160729964"></p>
-<p>左侧栏展示菜单的那块<el-aside>，通过 v-for来遍历munuList得到数据，得到数据之后通过&quot;linkUrl&quot;:“checkitem.html”,来跳转页面。</p>
-<p><img src="https://i.loli.net/2021/06/23/rn5RZDL2ktVPhBx.png" alt="image-20210623161238393"></p>
+<p><strong>RDB缺点</strong></p>
 <ul>
-<li>分析checkitem.html</li>
+<li>RDB方式无论是执行指令还是利用配置，无法做到实时持久化，具有较大的可能性丢失数据</li>
+<li>bgsave指令每次运行要执行fork操作创建子进程，要牺牲掉一些性能</li>
+<li>Redis的众多版本中未进行RDB文件格式的版本统一，有可能出现各版本服务之间数据格式无法兼容现象</li>
 </ul>
-<p>点击新建，绑定handleCreate函数</p>
-<p><img src="https://i.loli.net/2021/06/23/myNvWP26xVEBJHR.png" alt="image-20210623164101618"></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">handleCreate() &#123;</span><br><span class="line">	this.dialogFormVisible = true;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-dialog</span> <span class="attr">title</span>=<span class="string">&quot;新增检查项&quot;</span> <span class="attr">:visible.sync</span>=<span class="string">&quot;dialogFormVisible&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>输入校验</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rules: &#123;//校验规则</span><br><span class="line">	code: [&#123; required: true, message: &#x27;项目编码为必填项&#x27;, trigger: &#x27;blur&#x27; &#125;],</span><br><span class="line">	name: [&#123; required: true, message: &#x27;项目名称为必填项&#x27;, trigger: &#x27;blur&#x27; &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>提交表单数据</p>
-<p>​	点击新增窗口中的确定按钮时，触发handleAdd方法，所以需要在handleAdd方法中进行完善。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">&quot;footer&quot;</span> <span class="attr">class</span>=<span class="string">&quot;dialog-footer&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">&quot;dialogFormVisible4Edit = false&quot;</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;handleEdit()&quot;</span>&gt;</span>确定<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 新增标签弹层 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;add-form&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-dialog</span> <span class="attr">title</span>=<span class="string">&quot;新增检查项&quot;</span> <span class="attr">:visible.sync</span>=<span class="string">&quot;dialogFormVisible&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">ref</span>=<span class="string">&quot;dataAddForm&quot;</span> <span class="attr">:model</span>=<span class="string">&quot;formData&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules&quot;</span> <span class="attr">label-position</span>=<span class="string">&quot;right&quot;</span> <span class="attr">label-width</span>=<span class="string">&quot;100px&quot;</span><span class="attr">...</span>&gt;</span><span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">handleAdd () &#123;</span><br><span class="line">  //校验表单输入项是否合法,前面先指定refs属性。validate方法即是进行校验的方法，回调函数为箭头函数valid</span><br><span class="line">  this.$refs[&#x27;dataAddForm&#x27;].validate((valid) =&gt; &#123;</span><br><span class="line">    if (valid) &#123;</span><br><span class="line">      //表单数据校验通过，发送ajax请求将表单数据提交到后台</span><br><span class="line">	  console.log(this.formData);</span><br><span class="line">	//js的axios文件来发送请求，请求地址-&quot;/checkitem/add.do&quot;，请求体json形式this.formData，.then为回调函数response接收</span><br><span class="line">      axios.post(&quot;/checkitem/add.do&quot;,this.formData).then((response)=&gt; &#123;</span><br><span class="line">        //隐藏新增窗口</span><br><span class="line">        this.dialogFormVisible = false;</span><br><span class="line">        //判断后台返回的flag值（在result类中定义），true表示添加操作成功，false为添加操作失败</span><br><span class="line">        if(response.data.flag)&#123;</span><br><span class="line">		//调用分页查询函数</span><br><span class="line">		  this.findPage();</span><br><span class="line">		//弹出提示信息</span><br><span class="line">          this.$message(&#123;</span><br><span class="line">            message: response.data.message,</span><br><span class="line">            type: &#x27;success&#x27;</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;else&#123;//执行失败</span><br><span class="line">          this.$message.error(response.data.message);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;).finally(()=&gt; &#123;</span><br><span class="line">        this.findPage();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      this.$message.error(&quot;表单数据校验失败&quot;);</span><br><span class="line">      return false;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>AOF</strong>:将数据的操作过程进行保存，日志形式，存储操作过程，存储格式复杂，就是<strong>执行指令操作</strong></p>
+<p>AOF(append only file)持久化：以<strong>独立日志</strong>的方式记录每次写命令，重启时再重新执行AOF文件中命令达到恢复数据的目的。与RDB相比可以简单描述为<strong>改记录数据为记录数据产生的过程</strong>。主要作用是<strong>解决了数据持久化的实时性</strong>，是<strong>Redis持久化的主流方式</strong></p>
+<p><strong>AOF写数据过程：</strong></p>
+<p><img src="https://i.loli.net/2021/06/28/BWxhpZyCqJHk7Fm.png" alt="image-20210628145041991"></p>
+<p>AOF功能开启</p>
+<ul>
+<li>
+<p>配置  <strong>appendonly yes|no</strong></p>
+<p>作用 是否开启AOF持久化功能，默认为不开启状态</p>
+</li>
+<li>
+<p>配置 <strong>appendfsync always|everysec|no</strong><br>
+作用 AOF写数据策略</p>
+</li>
+</ul>
+<p><strong>AOF重写</strong>：就是将对同一个数据的若干个条命令执行结果转化成最终结果数据对应的指令进行记录。<strong>简化恢复数据的时候的操作数</strong></p>
+<p>分为手动重写和自动重写</p>
+<p><img src="https://i.loli.net/2021/06/28/tSERDBfliZOmWdT.png" alt="image-20210628145816380"></p>
+<p>整个的重写流程可以概括为：</p>
+<p><img src="https://i.loli.net/2021/06/28/GlUpBAaqgbZsLV3.png" alt="image-20210628150728299"></p>
+<p>具体为：</p>
+<p><img src="https://i.loli.net/2021/06/28/OjoXLnbS3rwJmy9.png" alt="image-20210628150806501"></p>
+<p><strong>RDB VS AOF</strong></p>
+<p><img src="https://i.loli.net/2021/06/28/kci64jF3HKhBlGN.png" alt="image-20210628151447793"></p>
+<p><strong>是否采用Redis持久化</strong>（看需求）</p>
+<p>如果数据库有就无需持久化，直接读数据库就行，如果数据没有存，数据又属于高频重要的，可以用持久化。</p>
+<h3 id="Redis-事务"><strong>Redis 事务</strong></h3>
+<ul>
+<li>
+<p>开启事务:multi    设定事务的开启位置，此指令执行后，后续的所有指令均加入到事务中</p>
+</li>
+<li>
+<p>执行事务:exec     设定事务的结束位置，同时执行事务。与multi成对出现，成对使用</p>
+</li>
+</ul>
+<p>注意：加入事务的命令暂时进入到任务队列中，并没有立即执行，只有执行exec命令才开始执行</p>
+<ul>
+<li>取消事务:discard  终止当前事务的定义，发生在multi之后，exec之前</li>
+</ul>
+<p><strong>锁</strong></p>
+<p><em><strong>watch key1 [key2……]</strong></em>       对 key 添加监视锁，在执行exec前如果key发生了变化，终止事务执行(监测一个值变不变)</p>
+<p><em><strong>unwatch</strong></em>      取消对所有 key 的监视</p>
+<p>分布式锁，使用 setnx 设置一个公共锁:  <em><strong>setnx lock-key value</strong></em></p>
+<p>利用setnx命令的返回值特征，有值则返回设置失败，无值则返回设置成功</p>
+<ul>
+<li>对于返回设置成功的，拥有控制权，进行下一步的具体业务操作</li>
+<li>对于返回设置失败的，不具有控制权，排队或等待 操作完毕通过del操作释放锁</li>
+</ul>
+<p><strong>expire lock-key second</strong>     使用 expire 为锁key添加时间限定，到时不释放，放弃锁 由</p>
+<h3 id="数据删除策略">数据删除策略</h3>
+<p>Redis内部用的是定期删除和惰性删除（都有）</p>
+<ol>
+<li>
+<p>定时删除：创建一个定时器，当key设置有过期时间，且过期时间到达时，由定时器任务立即执行对键的删除操作</p>
+<p>用处理器性能换取存储空间（拿时间换空间）<br>
+<img src="https://i.loli.net/2021/06/29/hbrHJdKIg9sNTtU.png" alt="image-20210629102011032"></p>
+</li>
+<li>
+<p>惰性删除：数据到达过期时间，不做处理。等下次访问该数据时，如果未过期，返回数据，发现已过期，删除，返回不存在</p>
+<p>用存储空间换取处理器性能，（拿时间换空间）expireIfNeeded()</p>
+<p><img src="https://i.loli.net/2021/06/29/RTYW6rVEngMyqdj.png" alt="image-20210629101341380"></p>
+</li>
+<li>
+<p>定期删除：</p>
+<p><img src="https://i.loli.net/2021/06/29/9fuRoaTzwKIbU6V.png" alt="image-20210629101945210"></p>
+</li>
+</ol>
+<ul>
+<li>
+<p>Redis启动服务器初始化时，读取配置server.hz的值，默认为10</p>
+</li>
+<li>
+<p>每秒钟执行server.hz次轮询函数serverCron()—&gt;每个库轮询databasesCron() —&gt;对每个库检查activeExpireCycle()</p>
+</li>
+<li>
+<p>activeExpireCycle()对每个expires[*]逐一进行检测，每次执行250ms/server.hz   (25ms)</p>
+</li>
+<li>
+<p>对某个expires[*]检测时，随机挑选W个key检测</p>
+<ul>
+<li>如果key超时，删除key</li>
+<li>如果一轮中删除的key的数量&gt;W<em>25%，循环该过程</em></li>
+<li><em>如果一轮中删除的key的数量≤W</em>25%，检查下一个expires[*]，0-15循环</li>
+<li>W取值=ACTIVE_EXPIRE_CYCLE_LOOKUPS_PER_LOOP属性值</li>
+</ul>
+</li>
+<li>
+<p>参数current_db用于记录activeExpireCycle() 进入哪个expires[*] 执行</p>
+</li>
+<li>
+<p>如果activeExpireCycle()执行时间到期，下次从current_db继续向下执行</p>
+</li>
+</ul>
 
       
 
@@ -220,7 +354,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">guang_health</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
         		</li>
       		
 		</ul>
@@ -276,7 +410,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/23/06-health-backend%E5%90%8E%E5%8F%B0%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/29/09-Redis%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -290,18 +424,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/06/26/07-Vue%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Vue学习总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/06/22/05-Dubbo%E4%B8%80%E5%A4%A9%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Dubbo一天学习总结</div>
+    <a href="/2021/06/27/08-%E6%96%B0%E5%A2%9E%E6%A3%80%E6%9F%A5%E9%A1%B9%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">新增检查项后台管理系统编写思路</div>
       <i class="icon-circle-right"></i>
     </a>
   
