@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Redis学习总结 | 纫秋茗以为佩</title>
+  <title>Redis学习总结1 | 纫秋茗以为佩</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jedis简易工具类开发 Jedis对象一般不能手动管理，通常由连接池提供连接 基于连接池获取连接   JedisPool：Jedis提供的连接池技术   poolConfig:连接池配置对象   host:redis服务地址   port:redis服务端口号     JedisPool构造方法： 12public JedisPool(GenericObjectPoolConfig poolCo">
+  <meta name="description" content="✈️ Jedis简易工具类开发 Jedis对象一般不能手动管理，通常由连接池提供连接 基于连接池获取连接   JedisPool：Jedis提供的连接池技术   poolConfig:连接池配置对象   host:redis服务地址   port:redis服务端口号     JedisPool构造方法： 12public JedisPool(GenericObjectPoolConfig poo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis学习总结">
+<meta property="og:title" content="Redis学习总结1">
 <meta property="og:url" content="http://example.com/2021/06/29/09-Redis%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="纫秋茗以为佩">
-<meta property="og:description" content="Jedis简易工具类开发 Jedis对象一般不能手动管理，通常由连接池提供连接 基于连接池获取连接   JedisPool：Jedis提供的连接池技术   poolConfig:连接池配置对象   host:redis服务地址   port:redis服务端口号     JedisPool构造方法： 12public JedisPool(GenericObjectPoolConfig poolCo">
+<meta property="og:description" content="✈️ Jedis简易工具类开发 Jedis对象一般不能手动管理，通常由连接池提供连接 基于连接池获取连接   JedisPool：Jedis提供的连接池技术   poolConfig:连接池配置对象   host:redis服务地址   port:redis服务端口号     JedisPool构造方法： 12public JedisPool(GenericObjectPoolConfig poo">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/06/29/98BqlV7QUZomWLf.png">
 <meta property="og:image" content="https://i.loli.net/2021/06/28/PhHd5poGEs67Wre.png">
@@ -25,11 +25,11 @@
 <meta property="og:image" content="https://i.loli.net/2021/06/28/GlUpBAaqgbZsLV3.png">
 <meta property="og:image" content="https://i.loli.net/2021/06/28/OjoXLnbS3rwJmy9.png">
 <meta property="og:image" content="https://i.loli.net/2021/06/28/kci64jF3HKhBlGN.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/29/hbrHJdKIg9sNTtU.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/30/uA2ajlQPsft98mR.png">
 <meta property="og:image" content="https://i.loli.net/2021/06/29/RTYW6rVEngMyqdj.png">
 <meta property="og:image" content="https://i.loli.net/2021/06/29/9fuRoaTzwKIbU6V.png">
 <meta property="article:published_time" content="2021-06-29T00:46:12.000Z">
-<meta property="article:modified_time" content="2021-06-29T05:42:22.733Z">
+<meta property="article:modified_time" content="2021-06-30T02:56:32.841Z">
 <meta property="article:author" content="Chen Leo">
 <meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
@@ -170,7 +170,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Redis学习总结
+      Redis学习总结1
     </h1>
   
 
@@ -184,7 +184,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Jedis简易工具类开发">Jedis简易工具类开发</h3>
+        <h3 id="✈️-Jedis简易工具类开发">✈️ Jedis简易工具类开发</h3>
 <p>Jedis对象一般不能手动管理，通常由连接池提供连接</p>
 <p><strong>基于连接池获取连接</strong></p>
 <ul>
@@ -214,9 +214,9 @@
 <li>获取连接:对外访问接口，提供jedis连接对象，连接从连接池获取</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Jedis <span class="title">getJedis</span><span class="params">()</span></span>&#123; </span><br><span class="line">    Jedis jedis = jedisPool.getResource(); </span><br><span class="line">    <span class="keyword">return</span> jedis; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Redis持久化过程">Redis持久化过程</h3>
+<h3 id="🔰-Redis持久化过程">🔰 Redis持久化过程</h3>
 <p>分为RDB和AOF</p>
-<p><strong>RDB</strong>:将当前数据状态进行保存，快照形式，存储数据结果，存储格式简单，关注点在数据</p>
+<p>==<strong>RDB</strong>==:将当前数据状态进行保存，快照形式，存储数据结果，存储格式简单，关注点在数据</p>
 <p><img src="https://i.loli.net/2021/06/29/98BqlV7QUZomWLf.png" alt="image-20210629085204210"></p>
 <ol>
 <li>RDB启动方式 —— save指令:save指令的执行会阻塞当前Redis服务器，直到当前RDB过程完成为止，有可能会造成长时间阻塞，线上环境不建议使用。</li>
@@ -229,9 +229,17 @@
 <ol start="3">
 <li>RDB启动方式 ——save配置:save second changes</li>
 </ol>
+<ul>
+<li>
 <p>save配置要根据实际业务情况进行设置，频度过高或过低都会出现性能问题，结果可能是灾难性的</p>
+</li>
+<li>
 <p>save配置中对于second与changes设置通常具有互补对应关系，尽量不要设置成包含性关系</p>
+</li>
+<li>
 <p>save配置启动后执行的是bgsave操作</p>
+</li>
+</ul>
 <p><img src="https://i.loli.net/2021/06/28/QptGJlUCagh3Zn6.png" alt="image-20210628142359598"></p>
 <p>对比：<img src="https://i.loli.net/2021/06/28/mDlVC36PFioUeXO.png" alt="image-20210628142719779"></p>
 <p>总结：</p>
@@ -248,7 +256,7 @@
 <li>bgsave指令每次运行要执行fork操作创建子进程，要牺牲掉一些性能</li>
 <li>Redis的众多版本中未进行RDB文件格式的版本统一，有可能出现各版本服务之间数据格式无法兼容现象</li>
 </ul>
-<p><strong>AOF</strong>:将数据的操作过程进行保存，日志形式，存储操作过程，存储格式复杂，就是<strong>执行指令操作</strong></p>
+<p>==<strong>AOF</strong>==:将数据的操作过程进行保存，日志形式，存储操作过程，存储格式复杂，就是<strong>执行指令操作</strong></p>
 <p>AOF(append only file)持久化：以<strong>独立日志</strong>的方式记录每次写命令，重启时再重新执行AOF文件中命令达到恢复数据的目的。与RDB相比可以简单描述为<strong>改记录数据为记录数据产生的过程</strong>。主要作用是<strong>解决了数据持久化的实时性</strong>，是<strong>Redis持久化的主流方式</strong></p>
 <p><strong>AOF写数据过程：</strong></p>
 <p><img src="https://i.loli.net/2021/06/28/BWxhpZyCqJHk7Fm.png" alt="image-20210628145041991"></p>
@@ -274,7 +282,7 @@
 <p><img src="https://i.loli.net/2021/06/28/kci64jF3HKhBlGN.png" alt="image-20210628151447793"></p>
 <p><strong>是否采用Redis持久化</strong>（看需求）</p>
 <p>如果数据库有就无需持久化，直接读数据库就行，如果数据没有存，数据又属于高频重要的，可以用持久化。</p>
-<h3 id="Redis-事务"><strong>Redis 事务</strong></h3>
+<h3 id="📆Redis-事务">📆<strong>Redis 事务</strong></h3>
 <ul>
 <li>
 <p>开启事务:multi    设定事务的开启位置，此指令执行后，后续的所有指令均加入到事务中</p>
@@ -287,7 +295,7 @@
 <ul>
 <li>取消事务:discard  终止当前事务的定义，发生在multi之后，exec之前</li>
 </ul>
-<p><strong>锁</strong></p>
+<h3 id="🎯分布式锁">🎯<strong>分布式锁</strong></h3>
 <p><em><strong>watch key1 [key2……]</strong></em>       对 key 添加监视锁，在执行exec前如果key发生了变化，终止事务执行(监测一个值变不变)</p>
 <p><em><strong>unwatch</strong></em>      取消对所有 key 的监视</p>
 <p>分布式锁，使用 setnx 设置一个公共锁:  <em><strong>setnx lock-key value</strong></em></p>
@@ -297,22 +305,22 @@
 <li>对于返回设置失败的，不具有控制权，排队或等待 操作完毕通过del操作释放锁</li>
 </ul>
 <p><strong>expire lock-key second</strong>     使用 expire 为锁key添加时间限定，到时不释放，放弃锁 由</p>
-<h3 id="数据删除策略">数据删除策略</h3>
+<h3 id="📧-数据删除策略">📧 数据删除策略</h3>
 <p>Redis内部用的是定期删除和惰性删除（都有）</p>
 <ol>
 <li>
 <p>定时删除：创建一个定时器，当key设置有过期时间，且过期时间到达时，由定时器任务立即执行对键的删除操作</p>
 <p>用处理器性能换取存储空间（拿时间换空间）<br>
-<img src="https://i.loli.net/2021/06/29/hbrHJdKIg9sNTtU.png" alt="image-20210629102011032"></p>
+<img src="https://i.loli.net/2021/06/30/uA2ajlQPsft98mR.png" alt="image-20210630105454495" style="zoom:80%;" /></p>
 </li>
 <li>
 <p>惰性删除：数据到达过期时间，不做处理。等下次访问该数据时，如果未过期，返回数据，发现已过期，删除，返回不存在</p>
 <p>用存储空间换取处理器性能，（拿时间换空间）expireIfNeeded()</p>
-<p><img src="https://i.loli.net/2021/06/29/RTYW6rVEngMyqdj.png" alt="image-20210629101341380"></p>
+<img src="https://i.loli.net/2021/06/29/RTYW6rVEngMyqdj.png" alt="image-20210629101341380" style="zoom:80%;" />
 </li>
 <li>
 <p>定期删除：</p>
-<p><img src="https://i.loli.net/2021/06/29/9fuRoaTzwKIbU6V.png" alt="image-20210629101945210"></p>
+<img src="https://i.loli.net/2021/06/29/9fuRoaTzwKIbU6V.png" alt="image-20210629101945210" style="zoom:80%;" />
 </li>
 </ol>
 <ul>
@@ -423,6 +431,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2021/06/30/10-Redis%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%932/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          10-Redis学习总结2
+        
+      </div>
+    </a>
   
   
     <a href="/2021/06/27/08-%E6%96%B0%E5%A2%9E%E6%A3%80%E6%9F%A5%E9%A1%B9%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/" id="article-nav-older" class="article-nav-link-wrap">
