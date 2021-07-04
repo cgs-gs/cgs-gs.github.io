@@ -8,17 +8,27 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Redis学习总结2 | 纫秋茗以为佩</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学无止境">
+  <meta name="description" content="1️⃣ Redis高级数据类型 Bitmaps类型   应用场景：电影网站  统计每天某一部电影是否被点播 统计每天有多少部电影被点播 统计每周&#x2F;月&#x2F;年有多少部电影被点播 统计年度哪部电影没有被点播    获取指定key对应偏移量上的bit值  getbit key offset   设置指定key对应偏移量上的bit值，value只能是1或0  setbit key offset value">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis学习总结2">
 <meta property="og:url" content="http://example.com/2021/06/30/10-Redis%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%932/index.html">
 <meta property="og:site_name" content="纫秋茗以为佩">
-<meta property="og:description" content="学无止境">
+<meta property="og:description" content="1️⃣ Redis高级数据类型 Bitmaps类型   应用场景：电影网站  统计每天某一部电影是否被点播 统计每天有多少部电影被点播 统计每周&#x2F;月&#x2F;年有多少部电影被点播 统计年度哪部电影没有被点播    获取指定key对应偏移量上的bit值  getbit key offset   设置指定key对应偏移量上的bit值，value只能是1或0  setbit key offset value">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/07/03/6mf1DTG49LvHW7n.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/03/HwBOpk7gjbUlcQf.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/03/ZIwBsaFtV9qDUzK.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/03/Cnck1Z2hMyARq8x.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/03/KW7hyFBX3xaz5PZ.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/30/kM9ghP5Uv3YK4AQ.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/03/oPgt1drQTaywHEN.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/03/BsVr5D4HK3j9UOF.png">
 <meta property="article:published_time" content="2021-06-30T02:59:10.000Z">
-<meta property="article:modified_time" content="2021-06-30T04:14:43.749Z">
+<meta property="article:modified_time" content="2021-07-03T13:57:53.194Z">
 <meta property="article:author" content="Chen Leo">
+<meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/07/03/6mf1DTG49LvHW7n.png">
   
     <link rel="alternative" href="/atom.xml" title="纫秋茗以为佩" type="application/atom+xml">
   
@@ -169,7 +179,96 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="1️⃣-Redis高级数据类型">1️⃣ Redis高级数据类型</h3>
+<p><strong>Bitmaps类型</strong></p>
+<ul>
+<li>
+<p>应用场景：电影网站</p>
+<ul>
+<li>统计每天某一部电影是否被点播</li>
+<li>统计每天有多少部电影被点播</li>
+<li>统计每周/月/年有多少部电影被点播</li>
+<li>统计年度哪部电影没有被点播</li>
+</ul>
+</li>
+<li>
+<p>获取指定key对应偏移量上的bit值  getbit key offset</p>
+</li>
+<li>
+<p>设置指定key对应偏移量上的bit值，value只能是1或0  setbit key offset value</p>
+</li>
+</ul>
+<span id="more"></span>
+<p><strong>HyperLogLog类型</strong></p>
+<ul>
+<li>统计不重复数据的数量，用来做基数统计的，运用了LogLog的算法</li>
+</ul>
+<p><strong>GEO</strong></p>
+<ul>
+<li>添加坐标点   geoadd key longitude latitude member [longitude latitude member …]</li>
+<li>获取坐标点   geopos key member [member …]</li>
+<li>计算坐标点距离   geodist key member1 member2 [unit]</li>
+</ul>
+<h3 id="2️⃣-主从复制（数据同步问题）">2️⃣ 主从复制（数据同步问题）</h3>
+<ul>
+<li>互联网“三高”架构：高并发，高性能，高可用。高可用有五九之说，99.999%，即一年中可以宕机5分多</li>
+<li>提供数据方：master 主服务器，主节点，主库 主客户端<br>
+接收数据方：slave 从服务器，从节点，从库 从客户端</li>
+</ul>
+<img src="https://i.loli.net/2021/07/03/6mf1DTG49LvHW7n.png" alt="image-20210703214553215" style="zoom:80%;" />
+<ul>
+<li>
+<p>主从复制的作用</p>
+<ul>
+<li>读写分离：master写、slave读，提高服务器的读写负载能力</li>
+<li>负载均衡：基于主从结构，配合读写分离，由slave分担master负载，并根据需求的变化，改变slave的数量，通过多个从节点分担数据读取负载，大大提高Redis服务器并发量与数据吞吐量</li>
+<li>故障恢复：当master出现问题时，由slave提供服务，实现快速的故障恢复</li>
+<li>数据冗余：实现数据热备份，是持久化之外的一种数据冗余方式</li>
+<li>高可用基石：基于主从复制，构建哨兵模式与集群，实现Redis的高可用方案</li>
+</ul>
+</li>
+<li>
+<p>主从复制过程大体可以分为3个阶段</p>
+<img src="https://i.loli.net/2021/07/03/HwBOpk7gjbUlcQf.png" style="zoom:80%;" />
+<ul>
+<li>
+<p><strong>建立连接阶段</strong>（即准备阶段）：建立slave到master的连接，使master能够识别slave，并保存slave端口号</p>
+<p>步骤1：设置master的地址和端口，保存master信息  slaveof <masterip> <masterport><br>
+步骤2：建立socket连接<br>
+步骤3：发送ping命令（定时器任务)<br>
+步骤4：身份验证<br>
+步骤5：发送slave端口信息。至此，主从连接成功！<br>
+状态：slave：保存master的地址与端口   master：保存slave的端口<br>
+总体：之间创建了连接的socket</p>
+<img src="https://i.loli.net/2021/07/03/ZIwBsaFtV9qDUzK.png" alt="image-20210703214752725" style="zoom:80%;" />
+</li>
+<li>
+<p><strong>数据同步阶段</strong>：在slave初次连接master后，复制master中的所有数据到slave，将slave的数据库状态更新成master当前的数据库状态</p>
+<p>步骤1：请求同步数据</p>
+<p>步骤2：创建RDB同步数据</p>
+<p>步骤3：恢复RDB同步数据（全量复制）</p>
+<p>步骤4：请求部分同步数据 （部分复制或者增量复制）</p>
+<p>步骤5：恢复部分同步数据 至此，数据同步工作完成</p>
+<p>状态： slave： 具有master端全部数据，包含RDB过程接收的数据 master： 保存slave当前数据同步的位置</p>
+<img src="https://i.loli.net/2021/07/03/Cnck1Z2hMyARq8x.png" alt="image-20210703214847055" style="zoom:80%;" />
+<p>注：1.复制缓冲区大小设定不合理（默认是1M），会导致数据溢出。如进行全量复制周期太长，进行部分复制时发现数据已经存在丢失的情况，必须进行第二次全量复制，致使slave陷入死循环状态。</p>
+<p>​		2.slave过多时，建议调整拓扑结构，由一主多从结构变为树状结构，中间的节点既是master，也是slave。注意使用树状结构时，由于层级深度，导致深度越高的slave与最顶层master间数据同步延迟较大，数据一致性变差，应谨慎选择。</p>
+<p>​		3.部分复制用的是aof重写</p>
+</li>
+<li>
+<p><strong>命令传播阶段</strong>：当master数据库状态被修改后，导致主从服务器数据库状态不一致，此时需要让主从数据同步到一致的状态，同步的动作称为命令传播</p>
+<p><strong>命令传播阶段的部分复制的三个核心要素</strong>：1.服务器的运行 id（run id）2.主服务器的复制积压缓冲区3.主从服务器的复制偏移量</p>
+<img src="https://i.loli.net/2021/07/03/KW7hyFBX3xaz5PZ.png" alt="image-20210703214927048" style="zoom:80%;" />
+<img src="https://i.loli.net/2021/06/30/kM9ghP5Uv3YK4AQ.png" alt="image-20210630160659444" style="zoom:80%;" />
+<img src="https://i.loli.net/2021/07/03/oPgt1drQTaywHEN.png" alt="image-20210703215024137" style="zoom:80%;" />
+<p>心跳机制：进入命令传播阶段候，master与slave间需要进行信息交换，使用心跳机制进行维护，实现双方连接保持在线</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>总的主从复制的工作流程可以如下表示：</p>
+<img src="https://i.loli.net/2021/07/03/BsVr5D4HK3j9UOF.png" alt="image-20210703215103229" style="zoom:80%;" />
+
       
 
       
@@ -177,6 +276,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       

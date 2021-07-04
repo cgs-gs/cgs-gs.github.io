@@ -15,25 +15,24 @@
 <meta property="og:site_name" content="纫秋茗以为佩">
 <meta property="og:description" content="✈️ Jedis简易工具类开发 Jedis对象一般不能手动管理，通常由连接池提供连接 基于连接池获取连接   JedisPool：Jedis提供的连接池技术   poolConfig:连接池配置对象   host:redis服务地址   port:redis服务端口号     JedisPool构造方法： 12public JedisPool(GenericObjectPoolConfig poo">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.loli.net/2021/06/29/98BqlV7QUZomWLf.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/28/PhHd5poGEs67Wre.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/28/X6hHpAQvPqSRY5K.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/28/QptGJlUCagh3Zn6.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/28/mDlVC36PFioUeXO.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/28/BWxhpZyCqJHk7Fm.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/28/tSERDBfliZOmWdT.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/28/GlUpBAaqgbZsLV3.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/28/OjoXLnbS3rwJmy9.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/28/kci64jF3HKhBlGN.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/30/uA2ajlQPsft98mR.png">
-<meta property="og:image" content="https://i.loli.net/2021/06/29/RTYW6rVEngMyqdj.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/01/LjsS4RilXQJfCIM.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/01/7KGL4jguhWl2YJy.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/01/ZBoDyxN3mCG17kO.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/01/uf7NaThVASt6joE.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/01/kLve6E1AsGU7CH2.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/01/qN1VnmyK9vHckDb.png">
+<meta property="og:image" content="c:/Users/%E9%99%88%E5%85%89%E8%83%9C/AppData/Roaming/Typora/typora-user-images/image-20210701094517125.png">
+<meta property="og:image" content="c:/Users/%E9%99%88%E5%85%89%E8%83%9C/AppData/Roaming/Typora/typora-user-images/image-20210701094551345.png">
+<meta property="og:image" content="c:/Users/%E9%99%88%E5%85%89%E8%83%9C/AppData/Roaming/Typora/typora-user-images/image-20210701094619568.png">
+<meta property="og:image" content="c:/Users/%E9%99%88%E5%85%89%E8%83%9C/AppData/Roaming/Typora/typora-user-images/image-20210701094638703.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/03/PsMAOrNd5F91RnX.png">
 <meta property="og:image" content="https://i.loli.net/2021/06/29/9fuRoaTzwKIbU6V.png">
 <meta property="article:published_time" content="2021-06-29T00:46:12.000Z">
-<meta property="article:modified_time" content="2021-06-30T02:56:32.841Z">
+<meta property="article:modified_time" content="2021-07-03T13:57:34.954Z">
 <meta property="article:author" content="Chen Leo">
 <meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/06/29/98BqlV7QUZomWLf.png">
+<meta name="twitter:image" content="https://i.loli.net/2021/07/01/LjsS4RilXQJfCIM.png">
   
     <link rel="alternative" href="/atom.xml" title="纫秋茗以为佩" type="application/atom+xml">
   
@@ -217,15 +216,15 @@
 <h3 id="🔰-Redis持久化过程">🔰 Redis持久化过程</h3>
 <p>分为RDB和AOF</p>
 <p>==<strong>RDB</strong>==:将当前数据状态进行保存，快照形式，存储数据结果，存储格式简单，关注点在数据</p>
-<p><img src="https://i.loli.net/2021/06/29/98BqlV7QUZomWLf.png" alt="image-20210629085204210"></p>
+<img src="https://i.loli.net/2021/07/01/LjsS4RilXQJfCIM.png" alt="image-20210701093902244"  />
 <ol>
 <li>RDB启动方式 —— save指令:save指令的执行会阻塞当前Redis服务器，直到当前RDB过程完成为止，有可能会造成长时间阻塞，线上环境不建议使用。</li>
 </ol>
-<p><img src="https://i.loli.net/2021/06/28/PhHd5poGEs67Wre.png" alt="image-20210628142344340"></p>
+<p><img src="https://i.loli.net/2021/07/01/7KGL4jguhWl2YJy.png" alt="image-20210701093941206"></p>
 <ol start="2">
 <li>RDB启动方式 —— bgsave指令（bg是后台的意思）:bgsave命令是针对save阻塞问题做的优化。Redis内部所有涉及到RDB操作都采用bgsave的方式，save命令可以放弃使用。</li>
 </ol>
-<p><img src="https://i.loli.net/2021/06/28/X6hHpAQvPqSRY5K.png" alt="image-20210628142321393"></p>
+<p><img src="https://i.loli.net/2021/07/01/ZBoDyxN3mCG17kO.png" alt="image-20210701094008483"></p>
 <ol start="3">
 <li>RDB启动方式 ——save配置:save second changes</li>
 </ol>
@@ -240,8 +239,8 @@
 <p>save配置启动后执行的是bgsave操作</p>
 </li>
 </ul>
-<p><img src="https://i.loli.net/2021/06/28/QptGJlUCagh3Zn6.png" alt="image-20210628142359598"></p>
-<p>对比：<img src="https://i.loli.net/2021/06/28/mDlVC36PFioUeXO.png" alt="image-20210628142719779"></p>
+<p><img src="https://i.loli.net/2021/07/01/uf7NaThVASt6joE.png" alt="image-20210701094123326"></p>
+<p>对比：<img src="https://i.loli.net/2021/07/01/kLve6E1AsGU7CH2.png" alt="image-20210701094145333"></p>
 <p>总结：</p>
 <p><strong>RDB优点</strong>：</p>
 <ul>
@@ -259,7 +258,7 @@
 <p>==<strong>AOF</strong>==:将数据的操作过程进行保存，日志形式，存储操作过程，存储格式复杂，就是<strong>执行指令操作</strong></p>
 <p>AOF(append only file)持久化：以<strong>独立日志</strong>的方式记录每次写命令，重启时再重新执行AOF文件中命令达到恢复数据的目的。与RDB相比可以简单描述为<strong>改记录数据为记录数据产生的过程</strong>。主要作用是<strong>解决了数据持久化的实时性</strong>，是<strong>Redis持久化的主流方式</strong></p>
 <p><strong>AOF写数据过程：</strong></p>
-<p><img src="https://i.loli.net/2021/06/28/BWxhpZyCqJHk7Fm.png" alt="image-20210628145041991"></p>
+<p><img src="https://i.loli.net/2021/07/01/qN1VnmyK9vHckDb.png" alt="image-20210701094253111"></p>
 <p>AOF功能开启</p>
 <ul>
 <li>
@@ -273,13 +272,13 @@
 </ul>
 <p><strong>AOF重写</strong>：就是将对同一个数据的若干个条命令执行结果转化成最终结果数据对应的指令进行记录。<strong>简化恢复数据的时候的操作数</strong></p>
 <p>分为手动重写和自动重写</p>
-<p><img src="https://i.loli.net/2021/06/28/tSERDBfliZOmWdT.png" alt="image-20210628145816380"></p>
+<p><img src="C:/Users/%E9%99%88%E5%85%89%E8%83%9C/AppData/Roaming/Typora/typora-user-images/image-20210701094517125.png" alt="image-20210701094517125"></p>
 <p>整个的重写流程可以概括为：</p>
-<p><img src="https://i.loli.net/2021/06/28/GlUpBAaqgbZsLV3.png" alt="image-20210628150728299"></p>
+<p><img src="C:/Users/%E9%99%88%E5%85%89%E8%83%9C/AppData/Roaming/Typora/typora-user-images/image-20210701094551345.png" alt="image-20210701094551345"></p>
 <p>具体为：</p>
-<p><img src="https://i.loli.net/2021/06/28/OjoXLnbS3rwJmy9.png" alt="image-20210628150806501"></p>
+<p><img src="C:/Users/%E9%99%88%E5%85%89%E8%83%9C/AppData/Roaming/Typora/typora-user-images/image-20210701094619568.png" alt="image-20210701094619568"></p>
 <p><strong>RDB VS AOF</strong></p>
-<p><img src="https://i.loli.net/2021/06/28/kci64jF3HKhBlGN.png" alt="image-20210628151447793"></p>
+<p><img src="C:/Users/%E9%99%88%E5%85%89%E8%83%9C/AppData/Roaming/Typora/typora-user-images/image-20210701094638703.png" alt="image-20210701094638703"></p>
 <p><strong>是否采用Redis持久化</strong>（看需求）</p>
 <p>如果数据库有就无需持久化，直接读数据库就行，如果数据没有存，数据又属于高频重要的，可以用持久化。</p>
 <h3 id="📆Redis-事务">📆<strong>Redis 事务</strong></h3>
@@ -310,13 +309,12 @@
 <ol>
 <li>
 <p>定时删除：创建一个定时器，当key设置有过期时间，且过期时间到达时，由定时器任务立即执行对键的删除操作</p>
-<p>用处理器性能换取存储空间（拿时间换空间）<br>
-<img src="https://i.loli.net/2021/06/30/uA2ajlQPsft98mR.png" alt="image-20210630105454495" style="zoom:80%;" /></p>
+<p>用处理器性能换取存储空间（拿时间换空间）</p>
 </li>
 <li>
 <p>惰性删除：数据到达过期时间，不做处理。等下次访问该数据时，如果未过期，返回数据，发现已过期，删除，返回不存在</p>
 <p>用存储空间换取处理器性能，（拿时间换空间）expireIfNeeded()</p>
-<img src="https://i.loli.net/2021/06/29/RTYW6rVEngMyqdj.png" alt="image-20210629101341380" style="zoom:80%;" />
+<img src="https://i.loli.net/2021/07/03/PsMAOrNd5F91RnX.png" alt="image-20210703215635695" style="zoom:80%;" />
 </li>
 <li>
 <p>定期删除：</p>
