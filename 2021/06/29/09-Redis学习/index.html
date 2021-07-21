@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/07/03/PsMAOrNd5F91RnX.png">
 <meta property="og:image" content="https://i.loli.net/2021/06/29/9fuRoaTzwKIbU6V.png">
 <meta property="article:published_time" content="2021-06-29T00:46:12.000Z">
-<meta property="article:modified_time" content="2021-07-08T02:16:33.875Z">
+<meta property="article:modified_time" content="2021-07-08T12:20:40.077Z">
 <meta property="article:author" content="Chen Leo">
 <meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
@@ -326,7 +326,7 @@
 <p>Redis启动服务器初始化时，读取配置server.hz的值，默认为10</p>
 </li>
 <li>
-<p>每秒钟执行server.hz次轮询函数serverCron()—&gt;每个库轮询databasesCron() —&gt;对每个库检查activeExpireCycle()</p>
+<p>每秒钟执行server.hz(10)次轮询函数serverCron()—&gt;每个库轮询databasesCron() —&gt;对每个库检查activeExpireCycle()</p>
 </li>
 <li>
 <p>activeExpireCycle()对每个expires[*]逐一进行检测，每次执行250ms/server.hz   (25ms)</p>
@@ -347,6 +347,8 @@
 <p>如果activeExpireCycle()执行时间到期，下次从current_db继续向下执行</p>
 </li>
 </ul>
+<p><strong>LRU</strong>:(Least recently used) 最长时间没有被使用</p>
+<p><strong>LFU</strong>:（Least Frequently Used）:使用次数最少</p>
 
       
 
@@ -596,6 +598,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
             
             <div class="clearfix"></div>

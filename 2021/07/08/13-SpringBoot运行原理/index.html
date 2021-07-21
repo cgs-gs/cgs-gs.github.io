@@ -16,7 +16,7 @@
 <meta property="og:description" content="pom.xml文件  Maven项目，一般从pom.xml文件探究：  123456&lt;parent&gt;    &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;spring-boot-starter-parent&lt;&#x2F;artifactId&gt;    &lt;version&amp;gt">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-08T05:22:08.000Z">
-<meta property="article:modified_time" content="2021-07-08T05:23:32.181Z">
+<meta property="article:modified_time" content="2021-07-16T12:54:57.255Z">
 <meta property="article:author" content="Chen Leo">
 <meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary">
@@ -203,7 +203,8 @@
 <p>​		调用了 SpringFactoriesLoader 类的静态方法，进入SpringFactoriesLoader类 的 loadFactoryNames() 方法<br>
 ​        这里它又调用了 loadSpringFactories 方法<br>
 return (List)loadSpringFactories(classLoader).getOrDefault(factoryClassName,Collections.emptyList());<br>
-​		其中有很多META-INF/spring.factories，所有的自动配置类都在spring.factories里，通过遍历把东西全部加载封装成properties	,注意这么多自动配置不是都生效，需要导入对应的start才能生效，因为点进去有个核心注解@ConditionalOnClass，如果这里面的条件都满足才会生效。</p>
+​		其中有很多META-INF/spring.factories，所有的自动配置类都在spring.factories里，通过遍历把东西全部加载封装成properties	,注意这么多自动配置不是都生效，需要导入对应的start才能生效，因为点进去有个核心注解@ConditionalOnClass，如果这里面的条件都满足才会生效。如果类型不是Web应用，直接无效，</p>
+<p>​</p>
 <p><strong>结论 ：</strong></p>
 <ol>
 <li><strong>SpringBoot在启动的时候从类路径下的META-INF/spring.factories中获取</strong><br>
@@ -484,6 +485,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
             
             <div class="clearfix"></div>

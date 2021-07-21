@@ -23,8 +23,10 @@
 <meta property="og:image" content="https://i.loli.net/2021/06/30/kM9ghP5Uv3YK4AQ.png">
 <meta property="og:image" content="https://i.loli.net/2021/07/03/oPgt1drQTaywHEN.png">
 <meta property="og:image" content="https://i.loli.net/2021/07/03/BsVr5D4HK3j9UOF.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/08/usaQqe7Atk5yRoW.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/08/iKwOHJL2tTAnYu9.png">
 <meta property="article:published_time" content="2021-06-30T02:59:10.000Z">
-<meta property="article:modified_time" content="2021-07-03T13:57:53.194Z">
+<meta property="article:modified_time" content="2021-07-08T12:34:05.890Z">
 <meta property="article:author" content="Chen Leo">
 <meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
@@ -268,6 +270,31 @@
 </ul>
 <p>总的主从复制的工作流程可以如下表示：</p>
 <img src="https://i.loli.net/2021/07/03/BsVr5D4HK3j9UOF.png" alt="image-20210703215103229" style="zoom:80%;" />
+<h3 id="3️⃣-Redis集群结构设计">3️⃣ Redis集群结构设计</h3>
+<p>1.数据存储设计</p>
+<ul>
+<li>
+<p>通过算法设计，计算出key应该保存的位置</p>
+</li>
+<li>
+<p>将所有的存储空间计划切割成16384份，每台主机保存一部分<br>
+每份代表的是一个存储空间，不是一个key的保存空间</p>
+</li>
+<li>
+<p>将key按照计算出的结果放到对应的存储空间</p>
+</li>
+<li>
+<p>增强可扩展性</p>
+<img src="https://i.loli.net/2021/07/08/usaQqe7Atk5yRoW.png" alt="image-20210708195111391" style="zoom:80%;" />
+</li>
+</ul>
+<p>2.集群内部通讯设计</p>
+<ul>
+<li>各个数据库相互通信，保存各个库中槽的编号数据</li>
+<li>一次命中，直接返回</li>
+<li>一次未命中，告知具体位置</li>
+</ul>
+<img src="https://i.loli.net/2021/07/08/iKwOHJL2tTAnYu9.png" alt="image-20210708195833872" style="zoom:67%;" />
 
       
 
@@ -517,6 +544,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
             
             <div class="clearfix"></div>
